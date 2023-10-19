@@ -1,4 +1,4 @@
-def menu():
+def menu():  # Menu function
     print('Menu')
     print('-------------')
     print('1. Encode')
@@ -6,11 +6,11 @@ def menu():
     print('3. Quit\n')
 
 
-def encoder(password_in):
+def encoder(password_in):  # takes a numerical password in, returns all digits in the password +3.
     stored_pass = ''
     for char in password_in:
         char = int(char) + 3
-        stored_pass += str(char)[-1]
+        stored_pass += str(char)[-1]  # if 7, 8, or 9 then the output is 2 digits, only the last one is needed
     return stored_pass
 
 
@@ -22,6 +22,7 @@ def main():
     while continue_program:
         menu()
         user_choice = int(input('Please enter an option: '))
+        
         if user_choice == 1:
             password_input = input('Please enter your password to encode: ')
             final_password = encoder(password_input)
@@ -32,6 +33,9 @@ def main():
 
         if user_choice == 3:
             continue_program = False
+
+        if user_choice not in range(1, 4):
+            print('Invalid choice, please choose an integer 1-3.')
 
 
 if __name__ == '__main__':
