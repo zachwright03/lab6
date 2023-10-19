@@ -14,20 +14,25 @@ def encoder(password_in):
     return stored_pass
 
 
-final_password = ''
-password_input = ''
-continue_program = True
+def main():
+    final_password = ''
+    password_input = ''
+    continue_program = True
 
-while continue_program:
-    menu()
-    user_choice = int(input('Please enter an option: '))
-    if user_choice == 1:
-        password_input = input('Please enter your password to encode: ')
-        final_password = encoder(password_input)
-        print('Your password has been encoded and stored!\n')
+    while continue_program:
+        menu()
+        user_choice = int(input('Please enter an option: '))
+        if user_choice == 1:
+            password_input = input('Please enter your password to encode: ')
+            final_password = encoder(password_input)
+            print('Your password has been encoded and stored!\n')
 
-    if user_choice == 2:
-        print(f'The encoded password is {final_password}, and the original password is {password_input}')
+        if user_choice == 2:
+            print(f'The encoded password is {final_password}, and the original password is {password_input}')
 
-    if user_choice == 3:
-        continue_program = False
+        if user_choice == 3:
+            continue_program = False
+
+
+if __name__ == '__main__':
+    main()
