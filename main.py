@@ -1,3 +1,4 @@
+# author: Zachary Wright
 def menu():  # Menu function
     print('Menu')
     print('-------------')
